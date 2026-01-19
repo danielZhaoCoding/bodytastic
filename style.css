@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+/* Attributes for the Whole Page */
+html, body {
+	background-color: #e0f0fa;
+	margin: 0px;
+}
+
+/* Wrapper for TabBar */
+#TabBar{
+	background-color: #33414a;
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Button for TabBar */
+h3{
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	background-color: #33414a;;
+	font-family: 'Lexend';
+	color: white;
+	width: 20vw;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: calc(15px + 0.65vw);
+	transition: 0.5s;
+	margin: 0px;
+	cursor: pointer;
+}
+
+/* Color for Selected Tab */
+.activeTab{
+	background-color: #9dcae5 !important;
+	color: #33414a;
+}
+
+/* Wrapper for CloseButton  and  Header Div*/
+.closeButton, .header{
+	font-size: 0px;
+	margin: 0px;
+	padding: 0px;
+	height: 0px;
+	width: 0px;
+}
+
+/* Header Image in Landscape Mode */
+#headerImage{
+	height: 0px;
+}
+
+/* Homepage Div */
+#Homepage {
+	margin: 0px; 
+	text-align: center;
+  font-family: "Lexend";
+}
+
+/* Homepage Stats */
+#Homepage li{
+	padding: 10px;
+	font-size: 20px;
+}
+
+/* Homepage Tabs Container */
+
+#HomepageTabbar{
+	margin: 8px 0px 0px 0px;
+	display: flex;
+	justify-content: center;
+	background-color: #33414a;
+	position: fixed;
+	bottom: 0;
+	padding: 0px 12.5vw;
+}
+
+/* Homepage Tabs */
+#HomepageTabbar button{
+	border: 0px;
+	background-color:  #33414a;
+	font-family: 'Lexend';
+	color: white;
+	font-size: calc(15px + 0.5vw);
+	width: 25vw;
+	font-weight: bolder;
+	padding: 15px;
+	cursor: pointer;
+}
+
+/* Homepage Tab Icons */
+#HomepageTabbar button i{
+	font-size: 0px;
+}
+
+/* Homepage Tabs Hover */
+#HomepageTabbar button:hover{
+	transition: 0.5s;
+	color: #afd9f3;
+}
+
+/* Exit Button for Each Homepage Page */
+.HomepageDiv button{
+	display: block;
+	margin: 20px 20px 10px auto;
+	border: 0px solid black;
+	border-radius: 10px;
+	font-family: 'Lexend';
+	font-size: 24px;
+	font-weight: bolder;
+	background-color: #33414a;
+	color: white;
+	padding: 15px 30px; /* Height Width */
+	cursor: pointer;
+}
+
+.HomepageDiv button:hover{
+	transition: 0.3s;
+	color: #9dcae5;
+	background-color: #33414a;
+}
+
+.HomepageDiv button i{
+	font-size: 0px;
+}
+
+/* Both Leaderboards */
+.Leaderboard{
+	border: 0px solid black;
+	background-color: #afd9f3;
+	border-radius: 15px;
+	padding: 12px;
+	margin: 35px;
+	margin-bottom: 80px;
+}
+
+/* Both Leaderboard Cells */
+.Leaderboard td, .Leaderboard th{
+	padding: 6px 15px;
+	text-align: left;
+}
+
+/* Inspiration Text */
+.HomepageDiv p{
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	margin: 50px 20px;
+	font-size: calc(.8vw + 16px);
+}
+
+/* Container for all Challenges */
+#ChallengeDiv{
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+/* Container for each Challenge */
+.ChallengeContainer{
+	border: 3px solid black;
+	padding: 10px 25px 10px 10px;
+	border-radius: 5px;
+	margin: 15px;
+}
+
+.ChallengeContainer input[type="checkbox"]{
+	margin: 5px 10px;
+	display: inline;
+}
+
+/* Title for Challenges */
+.ChallengeContainer h2{
+	font-weight: bold;
+	display: inline;
+}
+
+/* Descriptions for Challenges */
+.ChallengeContainer h5{
+	text-align: left;
+	margin: 10px 0px;
+}
+
+#ChallengeInputs{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+#ChallengeInputs input, #ChallengeInputs button{
+	border: 4px solid #33414a;
+	border-radius: 20px;
+	width: 150px;
+	font-family: 'Lexend';
+	font-size: 18px;
+	padding: 10px;
+	margin: 15px;
+	background-color: rgba(0,0,0,0);
+}
+
+
+/* Health Log Table */
+#HealthLog table{
+	font-family: 'Lexend';
+	display: inline-block;
+	border: 0px solid black;
+	background-color: #afd9f3;
+	border-radius: 15px;
+	padding: 12px;
+	margin: 50px;
+}
+
+/* Health Log Cells */
+#HealthLog td, #HealthLog th{
+	padding: 6px 25px;
+	text-align: left;
+	min-width: 80px;
+}
+
+/* Health Log Font Sizes */
+#HealthLog th{
+	font-size: 24px;
+}
+#HealthLog td{
+	font-size: 18px;
+}
+
+/* Health Logger Input */
+#HealthLogger input[type=number], #HealthLogger input[type=text]{
+	width: calc(9.5vw + 70px);
+	border-radius: 20px;
+	background-color: rgba(0,0,0,0);
+	margin: 10px;
+	padding: 10px 15px;
+	border: 4px solid #33414a;
+	font-family: 'Lexend';
+	font-size: 20px;
+	display: inline-block;
+}
+
+/* Health Logger Container Div */
+#HealthLoggerContainer{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 5px;
+}
+
+/* Health Logger Cards */
+.HealthLoggerNode{
+	width: calc(9vw + 125px);
+	background-color: rgba(0,0,0,0);
+	font-size: calc(.6vw + 12px);
+	font-family: 'Lexend';
+	padding: 15px;
+	border: 4px solid black;
+	margin: 4px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: black;
+}
+.HealthLoggerNode:hover{
+	transition: 0.3s;
+	color: white;
+	background-color: #33414a;
+	border: 4px solid #33414a;
+	font-weight: bold;
+}
+
+/* Submission Button for Health Logger */
+#LoggerSubmit{
+	margin: 15px auto 10px auto;
+	border: 0px solid black;
+	border-radius: 10px;
+	font-family: 'Lexend';
+	font-size: 20px;
+	font-weight: bolder;
+	background-color: #33414a;
+	color: white;
+	padding: 15px 30px; /* Height Width */
+	cursor: pointer;
+	display: block;
+}
+
+/* Start Diagnostic Button */
+#DiagnosticFirstButton{
+	margin: 30vh auto;
+	font-size: calc(12px + 2vw);
+	border: 0px;
+	font-weight: bolder;
+	background-color: #33414a;
+	color: white;
+	padding: 15px 30px; /* Height Width */
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+	font-family: 'Lexend';
+}
+#DiagnosticFirstButton:hover{
+	transition: 0.3s;
+	color: white;
+}
+
+#DiagnosticLastButton{
+	margin: 5vh auto;
+	font-size: calc(10px + 1.2vw);
+	border: 0px;
+	font-weight: bolder;
+	background-color: #33414a;
+	color: white;
+	padding: 10px 20px; /* Height Width */
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+	font-family: 'Lexend';
+}
+
+/* Charting */
+canvas{
+	width: 50%;
+}
+.chartjs-size-monitor{
+	width: 50% !important;
+}
+
+#DiagnosticContainer{
+	margin-top: 50px;
+}
+
+/*Diagnostic Questions*/
+.diagnosticQuestion{
+	text-align: center;
+}
+
+.diagnosticMoveContainer{
+	display: flex;
+	justify-content: center;
+}
+
+.diagnosticMove{
+	border-radius: 5px;
+	font-family: 'Lexend';
+	border: 3px solid #33414a;
+	margin: 15px 15px 0px 15px;
+	font-size: 18px;
+	padding: 5px 10px;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0);
+}
+
+#DiagnosticResult h4{
+	text-align: center;
+	font-family: 'Lexend';
+	font-size: 32px;
+}
+
+/* Question */
+.diagnosticQuestion h2{
+	font-family: 'Lexend';
+	text-align: center;
+	font-size: calc(14px + 1.2vw);
+	margin: 20px;
+} 
+
+/* Multiple Choice */
+.diagnosticQuestion input[type="button"]{
+	display: block;
+	margin: 12px auto 12px auto;
+	font-family: 'Lexend';
+	font-size: 22px;
+	background-color: rgba(0,0,0,0);
+	border: 3px solid black;
+	border-radius: 5px !important;
+	padding: 7px 10px;
+	width: 250px;
+	height: 60px;
+	color: black;
+	cursor: pointer;
+}
+.diagnosticQuestion input[type="button"]:hover{
+	background-color: #33414a;
+	color: white;
+	transition: 0.3s;
+	font-weight: bold;
+}
+.selectedQuestion{
+	background-color: #afd9f3 !important;
+	color: black !important;
+	font-weight: 400 !important;
+	border-radius: 5px;
+}
+
+/* Input Box */
+.diagnosticQuestion input[type="number"]{
+	display: block;
+	margin: 12px auto 12px auto;
+	font-family: 'Lexend';
+	font-size: 18px;
+	background-color: rgba(0,0,0,0);
+	border: 3px solid black;
+	border-radius: 5px !important;
+	width: 240px;
+	height: 40px;
+	color: black;
+}
+
+.diagnosticQuestion p{
+	font-family: 'Lexend';
+	margin: 0px 15px 15px 20px;
+	
+}
+
+#DiagnosticResult button{
+	margin: 5vh auto;
+  font-size: calc(10px + 1.2vw);
+  border: 0px;
+  font-weight: bolder;
+  background-color: #33414a;
+  color: white;
+  padding: 15px 25px;
+  cursor: pointer;
+  display: block;
+  border-radius: 10px;
+  font-family: 'Lexend';
+}
+
+#MentalAssistant input[type="text"]{
+	display: block;
+	margin: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0);
+	border: 3px solid #33414a;
+	font-size: 14px;
+	width: 60vw;
+	font-family: 'Lexend';
+	padding: 5px;
+}
+
+#MentalAssistant button{
+	display: block;
+	margin: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 6px;
+	background-color: rgba(0,0,0,0);
+	border: 3px solid #33414a;
+	font-size: 18px;
+	width: 120px;
+	font-family: 'Lexend';
+	padding: 5px;
+	cursor: pointer;
+	color: black;
+}
+
+#MentalAssistant .userText{
+	text-align: left;
+	margin: 0px;
+	font-family: 'Lexend';
+	font-size: 16px;
+	padding: 15px 20vw 15px 5vw;
+}
+
+#MentalAssistant .aiText{
+	text-align: left;
+	margin: 0px;
+	padding: 15px 20vw 15px 5vw;
+	font-family: 'Lexend';
+	font-size: 16px;
+	background-color:#afd9f3;
+}
+
+.removeDivContent{
+	display: none !important;
+	transition: 0.3s;
+}
+
+#LoginPage h4, #SignUpPage h4{
+	font-family: 'Lexend';
+	text-align: center;
+	font-size: 20px;
+	font-weight: medium;
+}
+#LoginPage input, #LoginPage button, #SignUpPage input, #SignUpPage button, #LogOutButton{
+	font-family: 'Lexend';
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 5px;
+	border-radius: 3px;
+	font-size: 20px;
+}
+#LoginPage input, #SignUpPage input{
+	width: 240px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 30px;
+	border: 3px solid black;
+}
+#LoginPage button, #SignUpPage button, #LogOutButton{
+	height: 50px;
+	border: 3px solid #afd9f3;
+	background-color: white;
+	width: 256px;
+	color: black;
+	cursor: pointer;
+}
+#LoginPage h5, #SignUpPage h5{
+	font-family: 'Lexend';
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+#LoginPage h5:hover, #SignUpPage h5:hover{
+	color: #007bff;
+	cursor: pointer;
+}
+
+#SignedInPage h4{
+	font-family: 'Lexend';
+	text-align: center;
+	font-size: 20px;
+}
+
+#HealthLog select{
+	display: block;
+	margin: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+	font-family: 'Lexend';
+	font-size: 16px;
+	border-radius: 3px;
+	border: 2.2px solid black;
+	color: black;
+}
+#HealthLogger select{
+	margin: 10px;
+	margin-bottom: 0px;
+	font-family: 'Lexend';
+	font-size: 16px;
+	border-radius: 3px;
+	border: 2.2px solid black;
+	color: black;
+}
+
+.dropdownContainer{
+	display: flex;
+	justify-content: center;
+}
+
+/*Will change when in portrait mode*/
+@media screen and (orientation: portrait){
+
+		body, html{
+			font-weight: normal !important;
+		}
+		/* Buttons for TabBar */
+		h3{
+			margin: 2vw 0px;
+			margin-left: 3vw;
+			margin-right: auto;
+			display: block;
+			font-size: calc(5px + 2.5vw);
+			text-align: left;
+			transition: 0.5s;
+			font-weight: medium;
+		}
+
+		h3:hover{
+			background-color:#33414a;
+		}
+
+		/* Color for Selected Tab */
+		.activeTab{
+			background-color: #33414a !important;
+			color: #afd9f3;
+		}
+
+		/* TabBar */
+		#TabBar{
+			position: fixed;
+			transition: 0.5s;
+			top: 0;
+			left: 0;
+			flex-direction: column;
+			height: 100%;
+			width: 33vw;
+			z-index: 1;
+		}
+
+		/* Entire TabBar Closed */
+		.closedBar{
+			width: 0vw !important;
+		}
+
+		/* Buttons for TabBar when Closed */
+		.closedBar h3{
+			width: 0px !important;
+			margin-right: 0px !important;
+			margin-left: 0px; !important;
+			transition: 0.5s;
+		}
+	
+		/* X when TabBar is Open */
+		.closeButton{
+			width: auto;
+			margin-right: 3vw;
+			margin-left: auto;
+			font-size: 5vw;	
+			text-align: right;
+			height: 20px;
+			position: relative;
+			top: 10px;
+		}
+
+		/* Main Content Div when TabBar is Open */
+		#main{
+			opacity: 0.7;
+			margin-left: 0vw;
+			transition: 0.5s;
+			width: 100vw;
+			height: 100%;
+		}
+
+		/* Header Div */
+		.header{
+			width: 100% !important;
+			height: 70px !important;
+			background-color: #33414a;
+		}
+
+		/* Open Button */
+		#openButton{
+			font-size: 40px;
+			color: white;
+			padding: 15px;
+		}
+	
+		/* Normal Main Content Div when TabBar is Open */
+		.normalMain{
+			transition: 0.5s;
+			margin: 0vw !important;
+			width: 100vw !important; 
+			opacity: 1!important;
+			
+		}
+
+		/* Text for the Mobile Header */
+		h1{
+			font-family: 'Lexend';
+			display: inline;
+			font-size: 30px;
+			color: white;
+			font-weight: bold;
+			margin: 0px;
+			cursor: pointer;
+		}
+
+		/* Header Image */
+		#headerImage{
+			display: inline;
+			height: 50px;
+			cursor: pointer;
+			padding: 10px 10vw 10px 0px; /* Top, Right, Bottom, Left */
+		}
+
+		/* Homepage Text */
+		#Homepage li{
+			font-size: calc(2vw + 10px);
+		}
+
+		/* Homepage Tabbar */
+		#HomepageTabbar{
+			position: fixed;
+			bottom: 0;
+			
+		}
+	
+		/* Homepage Tab Buttons */
+		#HomepageTabbar button{
+			font-size: 0px;
+		}
+
+		/* Homepage Tab Icons */
+		#HomepageTabbar button i{
+			font-size: 24px;
+		}
+
+		/* Homepage Tabs Hover */
+		#HomepageTabbar button:hover{
+			transition: 0.5s;
+			background-color: #33414a;
+		}
+
+		/* Exit Button for Homepage Divs */
+		.HomepageDiv button{
+			font-size: 0px;
+			padding: 10px;
+			margin-bottom: 15px;
+		}
+
+		.HomepageDiv button i{
+			font-size: 24px;
+		}
+
+		/* Health Log Table */
+		#HealthLog table{
+			margin: 35px 0px;
+			padding: 12px 6px;
+		}
+
+		/* Health Log Cells */
+		#HealthLog td, #HealthLog th{
+			padding: 8px 5px;
+			text-align: left;
+		}
+
+		/* Health Log Text */
+		#HealthLog th{
+			font-size: 20px;
+		}
+		#HealthLog td{
+			font-size: 14px;
+		}
+	
+		/* Health Logger Cards */
+		.HealthLoggerNode{
+			color: black;
+		}	
+		.HealthLoggerNode:hover{
+			transition: 0s;
+			background-color:rgba(0,0,0,0);
+			color: black;
+			font-weight: 500;
+		}	
+}	
