@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The Official Bodytastic Product">
+  <meta name="keywords" content="Bodytastic, Health, Software">
+  <meta name="author" content="Bodytastic Co.">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <title>Bodytastic</title>
+	<link rel="icon" href="images/bodytastic_icon.png">
+  <link href="style.css" rel="stylesheet" type="text/css"/>     
+	<style></style>
+</head>
+
+<body>
+	<!--Switching Tabs-->
+ 	<div id="TabBar">
+		<h3 class="closeButton"><i id="closeButton" class="fas fa-times"></i></h3>
+	  <h3>Homepage</h3>
+	  <h3>Mental Assistant</h3>
+		<h3>Diagnostic</h3>
+		<h3>Health Logger</h3>
+		<h3>Health Log</h3>
+		<h3>Account</h3>
+	</div>
+	<div id="main">
+		<div class="header" style='text-align:center;'>
+			<h1 style='float:left;margin:0px;'><i id="openButton" class="fas fa-bars"></i></h1>
+			<div style='inline-block; display: flex; align-items: center; justify-content: center;'>
+				<h1 style='padding: 16.2px 11px 16.2px 0px;' id="headerText">Bodytastic</h1>
+				<img src='images/bodytastic_mini.png' id="headerImage">
+			</div>
+		</div>
+
+		<div id="Homepage" style="text-align: center;display: block;">
+			<div class="HomepageMain">
+				<ul id="HomepageStats" style="list-style-type:none; padding: 0px; padding-top: 7vh; margin: 0px 0px 25px 0px;">
+					<li>Health Points: 0</li>
+					<li>Physical Health Rating: 0</li>
+					<li>Mental Health Rating: 0</li>
+					<li>Active Day Streak: 1</li>
+				</ul>
+			</div><!--Stats/Homepage-->
+			
+			<div class="HomepageDiv" style="display:none;">
+				<button onclick="miniChangeTab(-1)">Exit<i class='fas fa-sign-out-alt'></i></button>
+
+				<div id="ChallengeInputs">
+					<input id="ChallengeInput1" placeholder="Challenge" type="text" maxlength="50">
+					<input id="ChallengeInput2" placeholder="Days" type="number" min="1" max="90" style="width:100px;">
+					<input id="ChallengeInput3" placeholder="Points" type="number" min="1" type="number" maxlength="3" required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" style="width:100px;">
+					<button id="ChallengeInput4" onclick="appendChallenge()" style="background-color: #33414a; width:80px;">Add</button>
+				</div>
+				<hr>
+				<div id="ChallengeDiv" style="margin-bottom: 50px;"></div>
+			</div><!--Challenges-->
+			
+			<div class="HomepageDiv" style="display:none;">
+				<button onclick="miniChangeTab(-1)">Exit<i class='fas fa-sign-out-alt'></i></button>
+				<p>Leaderboards may take a few minutes to update</p>
+				<div style='display: inline-block;'>
+					<h4 style="margin:0px; font-size: 24px;">Daily Leaderboard</h4>
+					<table id="LeaderboardDaily" class="Leaderboard">
+						<tr>
+							<th>Name</th>
+							<th>Points</th>
+							<th>Rank</th>
+						</tr>
+					</table>
+				</div>
+				<div style='display: inline-block;'>
+					<h4 style="margin:0px; font-size: 24px;">Weekly Leaderboard</h4>
+					<table id="LeaderboardWeekly" class="Leaderboard">
+						<tr>
+							<th>Name</th>
+							<th>Points</th>
+							<th>Rank</th>
+						</tr>
+					</table>
+				</div>
+			</div><!--Leaderboards-->
+			
+			<div class="HomepageDiv" style="display:none;">
+				<button onclick="miniChangeTab(-1)">Exit<i class='fas fa-sign-out-alt'></i></button>
+				<p id="InspirationalQuote">This is an inspirational quote</p>
+			</div><!--Inspiration-->
+
+			<div id="HomepageTabbar">
+				<button onclick="miniChangeTab(0)">Challenges<i class='fas fa-mountain'></i></button>
+				<button onclick="miniChangeTab(1)">Leaderboards<i class="fa fa-list-ol"></i></button>
+				<button onclick="miniChangeTab(2)">Inspiration<i class='far fa-lightbulb'></i></button>
+			</div>
+			
+		</div>
+		<div id="MentalAssistant">
+			<p style="text-align:center;font-family:'Lexend';font-size: 16px;margin: 15px;">Chat and Discuss Health Topics with our AI</p>
+			<input maxlength=140 placeholder="Your Chat"id="MentalQuestionInput" type="text">
+			<button id="MentalQuestionSubmit" style="margin-bottom: 30px;">Submit</button>
+			<div id="MentalQuestionResult"></div>
+		</div>
+		<div id="Diagnostic">
+			<button id="DiagnosticFirstButton" onclick="startDiagnostic()">Take Diagnostic</button>
+			<div id="DiagnosticContainer">
+			</div>
+			<div id="DiagnosticResult">
+				<h4>You Have Completed this Diagnostic</h4>
+				<img id="DiagnosticImage" src="images/bodytastic_scale.png" style="width: calc(50vw + 100px); margin-right: auto; margin-left: auto; display: block;">
+				<button onclick="clearDiagnostic()">Close Page</button>
+			</div>
+		</div>
+		<div id="HealthLogger">
+			<input type="text" placeholder="Search" id="LoggerSearch">
+			<br>
+			<hr>
+			<div class="dropdownContainer">
+			  <input type="number" class="ExtraInfo" style="display:none;">
+				<input type="number" class="ExtraInfo" style="display:none;">
+			</div>
+			<div class="dropdownContainer">
+				<select id="loggerSelectMonth" style="display:none;" ></select>
+				<select id="loggerSelectDate" style="display:none;" ></select>
+				<select id="loggerSelectYear" style="display:none;" ></select>
+			</div>
+			<button id="LoggerSubmit" onclick="completedLogger()" style="display:none;">Submit</button>
+			<div id="HealthLoggerContainer">
+			</div>
+		</div>
+		<div id="HealthLog" style="text-align: center;">
+			<select id="HealthLogSelect" onchange="applyNewCategories()">
+			</select>
+			<table id="HealthLogTable">
+				<tr>
+					<th>Date</th>
+					<th>Type</th>
+					<th>Description</th>
+				</tr>
+			</table>
+		</div>
+		<div id="Account">
+			<div id="LoginPage">
+				<h4>Login to Bodytastic</h4>
+				<input id="LoginUsername" type="text" placeholder="Username">
+				<input id="LoginPassword" type="password" placeholder="Password">
+				<button id="LoginSubmit">Log In</button>
+				<h5 id="SignUpButton">Don't have an account? Sign Up</h5>
+			</div>
+			
+			<div id="SignUpPage" class="removeDivContent">
+				<h4>Create a Bodytastic Account</h4>
+				<input id="SignUpUsername" type="text" placeholder="Username" maxlength="20">
+				<input id="SignUpPassword" type="password" placeholder="Password">
+				<input id="SignUpConfirmPassword" type="password" placeholder="Confirm Password">
+				<button id="SignUpSubmit">Sign Up</button>
+				<h5 id="LoginButton">Already Have an Account? Log In</h5>
+			</div>
+			
+			<div id="SignedInPage" class="removeDivContent">
+				<h4>Welcome </h4>
+				<h4>Stay Logged In: <input id="stayLoggedIn" type="checkbox"></input></h4>
+				<button id="LogOutButton">Log Out</button>
+			</div>
+		</div>
+  
+	</div>
+
+		
+	</div>
+	<script type="text/javascript" src="variables.json"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+	<!-- <script src="graph.js"></script> -->
+  <script src="index.js" ></script>
+	<script src="diagnostic.js" ></script>
+	<script src="recieve.js"></script>
+	<script src="log.js"></script>
+</body>
+
+</html>
